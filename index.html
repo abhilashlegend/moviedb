@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css" />
+</head>
+<body ng-app="myApp">
+    <div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom text-bg-dark" ng-controller="navController">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        <span class="fs-4 text-primary">MovieDB</span>
+        </a>
+
+        <ul class="nav nav-pills">
+        <li class="nav-item"><a href="#!" class="nav-link" ng-class="{ 'active' : isActive('/') }" aria-current="page">Movies</a></li>
+        <li class="nav-item"><a href="#!shows" class="nav-link" ng-class="{ 'active' : isActive('/shows') }">Shows</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Music</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">People</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+        </ul>
+    </header>
+    </div>
+
+    <div class="container">
+        <main ng-view>
+            
+        </main>
+    </div> <!-- End of container -->
+
+    <script type="text/javascript" src="./node_modules/angular/angular.min.js"></script>
+    <script type="text/javascript" src="./node_modules/angular-route/angular-route.min.js"></script>
+    <script type="text/javascript" src="./js/app.js"></script>
+    <script type="text/javascript" src="./js/routes.js"></script>
+    <script type="text/javascript" src="./js/controllers.js"></script>
+       
+</body>
+</html>

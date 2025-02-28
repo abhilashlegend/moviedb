@@ -1,0 +1,17 @@
+{
+  "name": "moviedb",
+  "version": "1.0.0",
+  "description": "movie database",
+  "main": "app.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "abhilash",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.8.2",
+    "angular-route": "^1.8.3",
+    "bootstrap": "^5.3.3",
+    "bootstrap-icons": "^1.11.3"
+  }
+}
