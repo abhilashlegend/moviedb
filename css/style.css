@@ -1,3 +1,32 @@
+.logo {
+    margin-left: 2rem;
+}
+
+.main-menubar { margin-top: 5px; }
+.main-menubar .nav-link { color: #FFF !important; }
+.main-menubar .nav-link:hover, .main-menubar .nav-link:focus { color: goldenrod !important; }
+.nav-pills .nav-link.active { background-color: goldenrod; }
+.nav-pills .nav-link.active:hover { color: #FFF !important; }
+
 .movie-link {
     text-decoration: none;
 }
+
+.footer {
+    margin-top: 3rem;
+    color: #FFF;
+}
+
+.footer a {  color: #FFF; }
+.footer a:hover { color: goldenrod; }
+
+
+.movies-banner {
+    background: url(../images/movie-banner.jpg) no-repeat; 
+    background-position: center center;
+    background-size: cover;
+    padding-bottom: 7rem;
+    margin-bottom: 2rem;
+}
+
+.movies-banner h1 { color: #FFF; }
