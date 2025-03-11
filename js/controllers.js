@@ -32,6 +32,26 @@ app.controller('recommendedMoviesController', ['$scope','recommendedMoviesServic
 
 }])
 
-app.controller('showsController', ['$scope', function($scope) {
+app.controller('showsController', ['$scope','recommendedShowsService', function($scope, recommendedShowsService) {
 
+        $scope.shows = []; // Initialize shows array
+        $scope.pages = Array.from({ length: 100}, (_, i) => i + 1); // Create an array of numbers 1 to 100;
+        $scope.selectedPage = 1; // Default to page 1
+
+        // Reusable function for fetching recommended shows
+        function fetchRecommendedShows(page) {
+            recommendedShowsService.getRecommendedShows(page).then(result => {
+                console.log(result.data.results);
+                $scope.shows = result.data.results; // Update shows in scope
+            }).catch(error => {
+                console.log(error);
+            })
+        }
+
+        $scope.onPageChange = function() {
+            fetchRecommendedShows($scope.selectedPage);
+         }
+        
+         // Initial API call to fetch movies for the default page
+         fetchRecommendedShows($scope.selectedPage);
 }]);

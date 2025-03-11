@@ -6,7 +6,7 @@
 .main-menubar .nav-link { color: #FFF !important; }
 .main-menubar .nav-link:hover, .main-menubar .nav-link:focus { color: goldenrod !important; }
 .nav-pills .nav-link.active { background-color: goldenrod; }
-.nav-pills .nav-link.active:hover { color: #FFF !important; }
+.nav-pills .nav-link.active:hover, .nav-pills .nav-link.active:focus { color: #FFF !important; }
 
 .movie-link {
     text-decoration: none;
@@ -21,7 +21,7 @@
 .footer a:hover { color: goldenrod; }
 
 
-.movies-banner {
+.movies-banner, .shows-banner {
     background: url(../images/movie-banner.jpg) no-repeat; 
     background-position: center center;
     background-size: cover;
@@ -29,4 +29,6 @@
     margin-bottom: 2rem;
 }
 
-.movies-banner h1 { color: #FFF; }
+.shows-banner { background: url(../images/shows-banner.jpeg) no-repeat; }
+
+.movies-banner h1, .shows-banner h1 { color: #FFF; }

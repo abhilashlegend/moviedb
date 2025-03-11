@@ -1,5 +1,5 @@
-<div class="px-4 py-5 my-5 text-center">
-    <h1 class="display-5 fw-bold text-body-emphasis">Shows</h1>
+<div class="px-4 pt-5 mt-0 text-center shows-banner">
+    <h1 class="display-5 fw-bold">Shows</h1>
     <div class="col-lg-8 offset-lg-2">
         <form class="row row-cols-lg-auto g-3 align-items-center">
             <div class="col-auto w-100">
@@ -13,3 +13,37 @@
         </form>
     </div>
 </div>
+
+<section ng-controller="showsController">
+    <div class="row mb-4">
+      <div class="col-md-6">
+          <h2 class="">Popular Shows</h2>
+      </div>
+      <div class="col-md-6">
+          <form class="row row-cols-lg-auto g-3 align-items-end">
+            <div class="col-12 ms-auto">
+              <label class="visually-hidden" for="selectedPage">Page</label>
+              <select name="selectedPage" id="selectedPage" class="form-select" ng-model="selectedPage" ng-change="onPageChange(selectedPage)">
+                <option ng-repeat="page in pages" ng-value="{{page}}">Page {{page}}</option>
+              </select>
+            </div>
+          </form>
+      </div>
+  </div>
+  
+  <div class="row row-cols-1 row-cols-md-5 g-4">
+    <div class="col" ng-repeat="show in shows">
+      <a class="movie-link" href="">
+        <div class="card">
+            <img src="https://image.tmdb.org/t/p/w1280/{{ show.poster_path }}" height="20%" class="card-img-top" alt="{{ show.name }}">
+            <div class="card-body">
+            <h5 class="card-title">{{ show.name }}</h5>
+            <p class="card-text">{{ show.first_air_date }}</p>
+            </div>
+        </div>
+      </a>
+    </div>  
+  </div>
+  
+  
+  </section>
