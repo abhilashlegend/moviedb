@@ -34,13 +34,7 @@
   <div class="row row-cols-1 row-cols-md-5 g-4">
     <div class="col" ng-repeat="show in shows">
       <a class="movie-link" href="">
-        <div class="card">
-            <img src="https://image.tmdb.org/t/p/w1280/{{ show.poster_path }}" height="20%" class="card-img-top" alt="{{ show.name }}">
-            <div class="card-body">
-            <h5 class="card-title">{{ show.name }}</h5>
-            <p class="card-text">{{ show.first_air_date }}</p>
-            </div>
-        </div>
+        <item-card item="show"></item-card>
       </a>
     </div>  
   </div>

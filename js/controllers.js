@@ -17,6 +17,7 @@ app.controller('recommendedMoviesController', ['$scope','recommendedMoviesServic
      // Reusable function for fetching recommended movies
      function fetchRecommendedMovies(page){
         recommendedMoviesService.getRecommendedMovies(page).then(result => {
+            console.log(result.data.results);
             $scope.movies = result.data.results; // Update movies in scope
         }).catch(error => {
             console.error("Error fetching movies:", error); 

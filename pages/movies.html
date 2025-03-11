@@ -34,13 +34,7 @@
 <div class="row row-cols-1 row-cols-md-5 g-4">
   <div class="col" ng-repeat="movie in movies">
     <a class="movie-link" href="">
-      <div class="card">
-          <img src="https://image.tmdb.org/t/p/w1280/{{ movie.poster_path }}" height="20%" class="card-img-top" alt="{{ movie.title }}">
-          <div class="card-body">
-          <h5 class="card-title">{{ movie.title }}</h5>
-          <p class="card-text">{{ movie.release_date }}</p>
-          </div>
-      </div>
+      <item-card item="movie"></item-card>
     </a>
   </div>  
 </div>
