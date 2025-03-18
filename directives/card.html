@@ -1,5 +1,5 @@
 <div class="card">
-    <img src="https://image.tmdb.org/t/p/w1280/{{ item.poster_path }}" height="20%" class="card-img-top" alt="{{ item.title || item.name }}">
+    <img ng-src="{{  $parent.getItemImage(item) }}" height="20%" class="card-img-top" alt="{{ item.title || item.name }}">
     <div class="card-body">
     <h5 class="card-title">{{ item.title || item.name }}</h5>
     <p class="card-text">{{ item.release_date || item.first_air_date }}</p>

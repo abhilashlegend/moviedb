@@ -21,7 +21,7 @@
 .footer a:hover { color: goldenrod; }
 
 
-.movies-banner, .shows-banner {
+.movies-banner, .shows-banner, .music-banner {
     background: url(../images/movie-banner.jpg) no-repeat; 
     background-position: center center;
     background-size: cover;
@@ -30,5 +30,6 @@
 }
 
 .shows-banner { background: url(../images/shows-banner.jpeg) no-repeat; }
+.music-banner { background: url(../images/music-banner.jpg) no-repeat; }
 
 .movies-banner h1, .shows-banner h1 { color: #FFF; }

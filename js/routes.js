@@ -8,4 +8,8 @@ app.config(function($routeProvider){
         templateUrl: 'pages/shows.html',
         controller: 'showsController'
     })
+    .when('/music', {
+        templateUrl: 'pages/albums.html',
+        controller: 'showMusicAlbumsController'
+    })
 });

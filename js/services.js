@@ -39,3 +39,46 @@ app.service('recommendedShowsService', ['$http', function($http) {
         })
     }
 }])
+
+app.service('musicAlbumsService', ['$http', function($http) {
+   
+    var baseUrl = "https://api.discogs.com";
+    var accessToken = "ygviSFxGUtjgiCjZhfMKpOXrLhaIQTgNyZaxVWTJ"; // Replace with your token
+
+    this.getAlbums = function(page, perPage) {
+        var url = baseUrl + "/database/search";
+        var params = {
+            format: "album",
+            type: "release",
+            page: page || 1,
+            per_page: perPage || 20,
+            token: accessToken  // Using token directly in request
+        };
+
+        return $http({
+            method: "GET",
+            url: url,
+            params: params
+        }).then(function(response) {
+            return response.data;
+        }, function(error) {
+            return $q.reject(error);
+        });
+    };
+    
+}])
+
+app.service('ImageService', function(){
+    this.getImageUrl = function(item){
+        console.log("Fetching image for:", item);
+        if (item.poster_path) {
+            return "https://image.tmdb.org/t/p/w1280/" + item.poster_path; // TMDB API
+        } else if (item.cover_image) {
+            return item.cover_image; // Discogs API
+        } else if (item.thumb) {
+            return item.thumb; // Discogs Thumbnail (Fallback)
+        } else {
+            return "fallback-image.jpg"; // Default Image
+        }
+    }
+})
