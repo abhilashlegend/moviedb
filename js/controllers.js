@@ -93,3 +93,33 @@ app.controller('showMusicAlbumsController', ['$scope', 'musicAlbumsService', 'Im
      fetchAlbums($scope.selectedPage);
 
 }])
+
+
+app.controller('artistsController', ['$scope','recommendedArtistsService', 'ImageService', function($scope, recommendedArtistsService, ImageService) {
+
+    $scope.artists = []; // Initialize artists array
+    $scope.pages =  Array.from({ length: 100}, (_, i) => i + 1); // Create an array of numbers 1 to 100;
+    $scope.selectedPage = 1; // Default to page 1
+    
+    // Reusable function for fetching recommended artists
+    function fetchRecommendedArtists(page){
+        recommendedArtistsService.getRecommendedArtists(page).then(result => {
+           console.log(result.data.results);
+           $scope.artists = result.data.results; // Update artists in scope
+       }).catch(error => {
+           console.error("Error fetching artists:", error); 
+       });
+    }
+
+   $scope.getItemImage = function(item) {
+       return ImageService.getImageUrl(item);
+   };
+
+    $scope.onPageChange = function() {
+        fetchRecommendedArtists($scope.selectedPage);
+    }
+   
+    // Initial API call to fetch movies for the default page
+    fetchRecommendedArtists($scope.selectedPage);
+
+}])

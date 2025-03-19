@@ -40,6 +40,26 @@ app.service('recommendedShowsService', ['$http', function($http) {
     }
 }])
 
+app.service('recommendedArtistsService', ['$http', function($http) {
+    this.getRecommendedArtists = function(Pgno) {
+        const apiurl = `https://api.themoviedb.org/3/person/popular?language=en-US&page=${Pgno}`;
+
+        return $http({
+            method: 'GET',
+            url: apiurl,
+            headers: {
+                accept: 'application/json',
+                Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxZmNjNjA1M2FkOTcwYTNmMzZjNTlhZmI0OTlmMTAzMiIsIm5iZiI6MTc0MTE5MTAyOC45LCJzdWIiOiI2N2M4Nzc3NDkyNjRhYTU4NjY2ZTQ1ZGQiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.yqimCVW-wJ3c8MuTV1-mRAs_dfX7xuyc6YfiDnbbRhM'
+            }
+        }).then(function successCallback(response) {
+            return response;
+        }, function errorCallback(err) {
+            console.log(err);
+            return null;
+        })
+    }
+}])
+
 app.service('musicAlbumsService', ['$http', function($http) {
    
     var baseUrl = "https://api.discogs.com";
@@ -70,15 +90,16 @@ app.service('musicAlbumsService', ['$http', function($http) {
 
 app.service('ImageService', function(){
     this.getImageUrl = function(item){
-        console.log("Fetching image for:", item);
         if (item.poster_path) {
             return "https://image.tmdb.org/t/p/w1280/" + item.poster_path; // TMDB API
         } else if (item.cover_image) {
             return item.cover_image; // Discogs API
+        } else if(item.profile_path) {
+            return "https://image.tmdb.org/t/p/w1280/" + item.profile_path; // People Image
         } else if (item.thumb) {
             return item.thumb; // Discogs Thumbnail (Fallback)
         } else {
-            return "fallback-image.jpg"; // Default Image
+            return "./images/fallback-image"; // Default Image
         }
     }
 })

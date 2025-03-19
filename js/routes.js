@@ -12,4 +12,8 @@ app.config(function($routeProvider){
         templateUrl: 'pages/albums.html',
         controller: 'showMusicAlbumsController'
     })
+    .when('/people', {
+        templateUrl: 'pages/peoples.html',
+        controller: 'artistsController'
+    })
 });
