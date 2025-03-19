@@ -42,7 +42,7 @@ app.service('recommendedShowsService', ['$http', function($http) {
 
 app.service('recommendedArtistsService', ['$http', function($http) {
     this.getRecommendedArtists = function(Pgno) {
-        const apiurl = `https://api.themoviedb.org/3/person/popular?language=en-US&page=${Pgno}`;
+        const apiurl = `https://api.themoviedb.org/3/person/popular?language=en-IN&page=${Pgno}`;
 
         return $http({
             method: 'GET',

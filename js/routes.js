@@ -2,18 +2,22 @@ app.config(function($routeProvider){
     $routeProvider
     .when('/', {
         templateUrl: 'pages/movies.html',
-        controller: 'moviesController'
+        controller: 'moviesController',
+        title: 'Movies'
     })
     .when('/shows', {
         templateUrl: 'pages/shows.html',
-        controller: 'showsController'
+        controller: 'showsController',
+        title: 'Shows'
     })
     .when('/music', {
         templateUrl: 'pages/albums.html',
-        controller: 'showMusicAlbumsController'
+        controller: 'showMusicAlbumsController',
+        title: 'Music'
     })
     .when('/people', {
         templateUrl: 'pages/peoples.html',
-        controller: 'artistsController'
+        controller: 'artistsController',
+        title: 'People'
     })
 });

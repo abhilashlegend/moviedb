@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>CinemaDB - {{ pagetitle }}</title>
     <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" href="./node_modules/bootstrap-icons/font/bootstrap-icons.min.css" />
     <link rel="stylesheet" type="text/css" href="./css/style.css" />
 </head>
-<body ng-app="myApp">
+<body>
     <div class="container">
     <header class="d-flex flex-wrap justify-content-center py-3 text-bg-dark" ng-controller="navController">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
@@ -17,11 +17,11 @@
         </a>
 
         <ul class="nav nav-pills main-menubar">
-        <li class="nav-item"><a href="#!" class="nav-link" ng-class="{ 'active' : isActive('/') }" aria-current="page">Movies</a></li>
-        <li class="nav-item"><a href="#!shows" class="nav-link" ng-class="{ 'active' : isActive('/shows') }">Shows</a></li>
-        <li class="nav-item"><a href="#!music" class="nav-link" ng-class="{ 'active' : isActive('/music') }">Music</a></li>
-        <li class="nav-item"><a href="#!people" class="nav-link" ng-class="{ 'active' : isActive('/people') }">People</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="#!" class="nav-link" ng-class="{ 'active' : isActive('/') }" aria-current="page">Movies</a></li>
+          <li class="nav-item"><a href="#!shows" class="nav-link" ng-class="{ 'active' : isActive('/shows') }">Shows</a></li>
+          <li class="nav-item"><a href="#!music" class="nav-link" ng-class="{ 'active' : isActive('/music') }">Music</a></li>
+          <li class="nav-item"><a href="#!people" class="nav-link" ng-class="{ 'active' : isActive('/people') }">People</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">About</a></li>
         </ul>
     </header>
 
