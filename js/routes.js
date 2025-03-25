@@ -5,6 +5,11 @@ app.config(function($routeProvider){
         controller: 'recommendedMoviesController',
         title: 'Movies'
     })
+    .when('/movie/:movieId', {
+        templateUrl: 'pages/movie-detail.html',
+        controller: 'movieDetailController',
+        title: 'Movie Detail'
+    })
     .when('/shows', {
         templateUrl: 'pages/shows.html',
         controller: 'showsController',

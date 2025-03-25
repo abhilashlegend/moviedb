@@ -8,6 +8,10 @@ app.controller('aboutusController', ['$scope', function($scope) {
     
 }]);
 
+app.controller('movieDetailController', ['$scope', function($scope) {
+    
+}])
+
 app.controller('recommendedMoviesController', ['$scope','recommendedMoviesService', 'ImageService', function($scope, recommendedMoviesService, ImageService) {
 
      $scope.movies = []; // Initialize movies array
