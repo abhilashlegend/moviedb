@@ -2,7 +2,7 @@
     margin-left: 2rem;
 }
 
-.main-menubar { margin-top: 5px; }
+.main-menubar { margin-top: 5px; padding-right: 2rem; }
 .main-menubar .nav-link { color: #FFF !important; }
 .main-menubar .nav-link:hover, .main-menubar .nav-link:focus { color: goldenrod !important; }
 .nav-pills .nav-link.active { background-color: goldenrod; }

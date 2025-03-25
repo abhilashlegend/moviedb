@@ -4,8 +4,8 @@ app.controller('navController', ['$scope', '$location', function($scope, $locati
     }
 }])
 
-app.controller('moviesController', ['$scope', function($scope) {
-
+app.controller('aboutusController', ['$scope', function($scope) {
+    
 }]);
 
 app.controller('recommendedMoviesController', ['$scope','recommendedMoviesService', 'ImageService', function($scope, recommendedMoviesService, ImageService) {

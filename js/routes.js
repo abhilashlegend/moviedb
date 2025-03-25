@@ -2,7 +2,7 @@ app.config(function($routeProvider){
     $routeProvider
     .when('/', {
         templateUrl: 'pages/movies.html',
-        controller: 'moviesController',
+        controller: 'recommendedMoviesController',
         title: 'Movies'
     })
     .when('/shows', {
@@ -19,5 +19,10 @@ app.config(function($routeProvider){
         templateUrl: 'pages/peoples.html',
         controller: 'artistsController',
         title: 'People'
+    })
+    .when('/about', {
+        templateUrl: 'pages/aboutus.html',
+        controller: 'aboutusController',
+        title: 'About Us'
     })
 });
