@@ -8,8 +8,8 @@
                 </div>
             </div>
             <div class="col-md-8">
-                <h2>Cleaner (2025)</h2>
-                <div>21/02/2025 (US)
+                <h2>{{ movieDetails.original_title }}</h2>
+                <div>{{ movieDetails.release_date | date: 'dd-MM-yyyy' }} ( <span ng-repeat="c in countries">{{ c }}</span>, )
                     Action, Thriller
                     1h 36m</div>
                     <div>

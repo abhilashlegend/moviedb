@@ -8,8 +8,20 @@ app.controller('aboutusController', ['$scope', function($scope) {
     
 }]);
 
-app.controller('movieDetailController', ['$scope', function($scope) {
-    
+app.controller('movieDetailController', ['$scope','movieDetailsService','$routeParams', function($scope, movieDetailsService, $routeParams) {
+    $scope.movieDetails = [];
+    $scope.movieCountries = [];
+
+    const movieId = $routeParams.movieId;
+
+    movieDetailsService.getMovieById(movieId).then(result => {
+        console.log(result);
+        $scope.movieDetails = result.data;
+        $scope.movieCountries = result.data.origin_country;
+    }).catch(error => {
+        console.error("Error fetching movie details", error);
+    })
+
 }])
 
 app.controller('recommendedMoviesController', ['$scope','recommendedMoviesService', 'ImageService', function($scope, recommendedMoviesService, ImageService) {
